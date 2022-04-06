@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/05 22:59:55 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/05 23:34:33 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OUT_FILES)
 	ar rc $(NAME) $(OUT_FILES)
 
 %.o: %.c
-	$(COMPILER) $(OPTIONS) $(HEAD_FILE) -c $< 
+	$(COMPILER) $(OPTIONS) -c $< 
 
 clean:
 	rm -f $(NAME)
