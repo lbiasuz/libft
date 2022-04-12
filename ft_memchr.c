@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:49:13 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/12 20:52:25 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 20:53:22 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	while (n)
 	{
@@ -21,5 +21,5 @@ void	*memchr(const void *s, int c, size_t n)
 		s++;
 		n--;
 	}
-	return (NULL):
+	return (NULL);
 }
