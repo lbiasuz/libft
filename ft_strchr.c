@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 19:42:16 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/09 20:57:48 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/11 22:48:41 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	while (*s && *s != c)
 		s++;
 	if (*s == c)
-		return (s);
+		return ((char *) s);
 	return (NULL);
 }
