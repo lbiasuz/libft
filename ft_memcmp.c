@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 21:37:57 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/11 23:29:14 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 23:34:46 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	sa1 = (char *) s1;
 	sa2 = (char *) s2;
-	while (i < n && sa1[i] == sa2[i])
+	if (!n)
+		return (0);
+	while (i < n - 1 && sa1[i] == sa2[i])
 		i++;
-	return (sa1[i] - sa2[i]);
+	return (sa2[i] - sa1[i]);
 }
