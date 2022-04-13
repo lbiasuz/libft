@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:18:20 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/07 00:00:47 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 23:20:06 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memset(void *s, char c, size_t n)
 {
+	if (!n)
+		return (NULL);
 	while (n--)
 		*((char *) s + n) = c;
 	*(char *) s = c;

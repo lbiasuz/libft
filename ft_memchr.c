@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:49:13 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/12 21:23:01 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 23:22:41 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	aux = (char *) s;
 	while (n)
 	{
-		if (*aux == c)
+		if (*aux == (char) c)
 			return (aux);
 		aux++;
 		n--;
