@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:47:16 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/12 21:25:59 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 23:04:40 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned int	i;
 	char			*s;
