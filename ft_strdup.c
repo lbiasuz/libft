@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:01:05 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/11 22:54:42 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/12 21:26:35 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*strdup(const char *s)
 {
-	int		i;
-	char	*d;
+	unsigned int	i;
+	char			*d;
 
 	i = ft_strlen(s);
 	d = (char *) malloc(i);
