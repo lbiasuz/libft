@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:15:38 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/11 22:18:49 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/13 22:09:11 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	if (*nptr == '-')
 		n = -1;
-	if (!ft_isdigit(*nptr))
+	if (*nptr == '-' || *nptr == '+')
 		nptr++;
 	while (ft_isdigit(*nptr))
 	{

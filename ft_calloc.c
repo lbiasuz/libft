@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:47:16 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/12 23:04:40 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/13 22:04:17 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned int	i;
 	char			*s;
-
+	
 	i = 0;
-	s = (char *) malloc(nmemb * size);
+	if (nmemb > __SIZE_MAX__ / size)
+		return (NULL);
+	s = malloc((nmemb * size));
 	if (!s)
 		return (NULL);
-	while (i < nmemb * size)
+	while (i < (nmemb * size) -1)
 	{
 		s[i] = '\0';
 		i++;
