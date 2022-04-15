@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:49:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/08 00:03:54 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/15 03:30:19 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,38 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
+	unsigned int	si;
 
-	i = 0;
-	while (dest[i])
-		i++;
-	size -= i;
-	while (size && *src)
+	si = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	i = ft_strlen(dest) + 1;
+	// if (ft_strlen(dest) < size)
+	// 	size++;
+	while (i <= size + 1 && src[si])
 	{
-		dest[i] = *src;
+		dest[i] = src[si];
+		si++;
 		i++;
-		src++;
-		size--;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (ft_strlen(dest)+ft_strlen(src));
 }
+
+
+// size_t	ft_strlcat(char *dest, const char *src, size_t size)
+// {
+// 	unsigned int	i;
+
+// 	i = ft_strlen(dest);
+// 	size -= i;
+// 	while (size && *src)
+// 	{
+// 		dest[i] = *src;
+// 		i++;
+// 		src++;
+// 		size--;
+// 	}
+// 	dest[i] = '\0';
+// 	return (i);
+// }
