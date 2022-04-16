@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:49:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/16 15:00:18 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/16 15:46:59 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,23 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	dl;
-	unsigned int	sl;
-	unsigned int	i;
-	unsigned int	off;
+	unsigned int	dest_len;
+	unsigned int	src_len;
+	unsigned int	offset_len;
 
-	dl = ft_strlen(dest);
-	sl = ft_strlen(src);
-	off = dl;
-	i = 0;
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	offset_len = dest_len;
 	if (size == 0)
-		return (sl);
-	else if (size < dl)
-		return (size + sl);
-	while (*(src + i) != '\0' && off < size - 1)
+		return (src_len);
+	else if (size < dest_len)
+		return (size + src_len);
+	while (*src != '\0' && offset_len < size - 1)
 	{
-		*(dest + off) = *(src + i);
-		i++;
-		off++;
+		*(dest + offset_len) = *src;
+		src++;
+		offset_len++;
 	}
-	*(dest + off) = '\0';
-	return (dl + sl);
+	*(dest + offset_len) = '\0';
+	return (dest_len + src_len);
 }
