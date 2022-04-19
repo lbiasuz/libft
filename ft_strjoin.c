@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 20:25:41 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/18 20:27:00 by lbiasuz          ###   ########.fr       */
+/*   Created: 2022/04/18 20:26:25 by lbiasuz           #+#    #+#             */
+/*   Updated: 2022/04/18 21:42:30 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*sub;
-	unsigned int	start_len;
+	char			*join;
+	unsigned int	s1_len;
+	unsigned int	s2_len;
 
-	start_len = ft_strlen(s + start);
-	if (s + start > s + ft_strlen(s))
-	{
-		sub = malloc(1);
-		*sub = '\0';
-		return (sub);
-	}
-	else if (start_len < len)
-		sub = malloc(start_len + 1);
-	else
-		sub = malloc(len + 1);
-	if (!sub)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!join)
 		return (NULL);
-	ft_strlcpy(sub, (s + start), len + 1);
-	return (sub);
+	ft_strlcpy(join, s1, s1_len + 1);
+	ft_strlcpy(join + s1_len, s2, s2_len + 1);
+	return (join);
 }
