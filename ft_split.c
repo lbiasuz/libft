@@ -6,53 +6,71 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 21:35:10 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/20 01:16:16 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/21 00:20:27 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int	split_count(char *s, char c)
+static int	split_count(char const *s, char c)
 {
-	int	i;
+	int				i;
+	char			*a;
 
 	i = 0;
-	while (*s)
+	a = (char *) s;
+	while (*a)
 	{
-		while (*s == c)
-			s++;
-		if (!(*s))
+		while (*a == c)
+			a++;
+		if (!(*a))
 			break;
-		while (*s != c && *s != 0)
-			s++;
+		while (*a != c && *a != 0)
+			a++;
 		i++;
 	}
 	return (i);
 }
 
+static int	word_len(char const *s, char c)
+{
+	unsigned int	i;
+	char			*a;
+
+	i = 0;
+	a = (char *) s;
+	while (*a == c)
+		a++;
+	while (a[i] && a[i] != c)
+		i++;
+	return (i);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	char	*aux;
-	int		i;
+	int		wc;
 	int		j;
 
-	i = split_count((char *) s, c);
-	tab = malloc(sizeof(char *) * (i + 1));
+	j = 0;
+	wc = split_count((char *) s, c);
+	tab = malloc(sizeof(char **) * (wc + 1));
 	if (!tab)
 		return (NULL);
-	while (split_count((char *) s, c))
+	while (split_count(&s[j], c))
 	{
-		j = 0;
-		while (s[j] && s[j] != c)
+		while (s[j] == c)
 			j++;
-		aux = malloc(sizeof(char) * (j + 1));
+		aux = malloc(sizeof(char) * (word_len(&s[j], c) + 1));
 		if (!aux)
 			return (NULL);
-		tab[i - split_count((char *) s, c)] = aux;
-		s += ft_strlcpy(aux, s, j + 1);
+		ft_strlcpy(aux, &s[j], word_len(&s[j], c) + 1);
+		tab[wc - split_count(&s[j], c)] = aux;
+		j += word_len(&s[j], c);
 	}
+	tab[wc] = NULL;
 	return (tab);
 }
 
