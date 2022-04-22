@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 21:35:10 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/21 00:20:27 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/21 22:42:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	split_count(char const *s, char c)
 		while (*a == c)
 			a++;
 		if (!(*a))
-			break;
+			break ;
 		while (*a != c && *a != 0)
 			a++;
 		i++;
@@ -73,42 +73,3 @@ char	**ft_split(char const *s, char c)
 	tab[wc] = NULL;
 	return (tab);
 }
-
-
-// static int	split_count(char const *s, char c)
-// {
-// 	unsigned int i;
-
-// 	i = 0;
-// 	while(*s)
-// 	{
-// 		if (ft_strchr(s, c))
-// 	}
-// 	return (i);
-// }
-
-// char **ft_split(char const *s, char c)
-// {
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	char			*sub;
-// 	char			**array;
-
-// 	i = 0;
-// 	j = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 		{
-// 			sub = (char *) malloc(sizeof(char) + 1);
-// 			ft_strlcpy(sub, s, i + 1);
-// 			array[j] = sub;
-// 			s = &s[i + 1];
-// 			j++;
-// 			i = 0;
-// 		}
-// 		i++;
-// 	}
-// 	array[j] = NULL;
-// 	return (array);
-// }
