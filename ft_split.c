@@ -6,12 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 21:35:10 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/21 22:42:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/23 09:43:24 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	split_count(char const *s, char c)
 {

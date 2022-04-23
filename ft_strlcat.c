@@ -6,13 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:49:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/16 15:46:59 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/23 09:42:30 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <memory.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

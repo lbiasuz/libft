@@ -1,55 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 10:09:50 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/23 09:43:23 by lbiasuz          ###   ########.fr       */
+/*   Created: 2022/04/23 09:33:38 by lbiasuz           #+#    #+#             */
+/*   Updated: 2022/04/23 09:45:40 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	int_size(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char			*dest;
 	unsigned int	i;
 
 	i = 0;
-	if (n == 0)
-		return (2);
-	else if (n < 0)
-		i++;
-	while (n)
-	{
-		i++;
-		n = n / 10;
-	}
-	return (i + 1);
-}
-
-char	*ft_itoa(int n)
-{
-	char			*dest;
-	int				negative;
-	unsigned int	size;
-
-	negative = n < 0;
-	size = int_size(n);
-	dest = malloc(sizeof(char) * (size));
+	dest = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
-	dest[--size] = '\0';
-	if (!n)
-		dest[--size] = '0';
-	while (n)
+	while (s[i])
 	{
-		size--;
-		dest[size] = ((-negative + !negative) * (n % 10) + 48);
-		n = n / 10;
+		dest[i] = f(i,s[i]);
+		i++;
 	}
-	if (negative)
-		dest[--size] = '-';
+	dest[i] = '\0';
 	return (dest);
 }
