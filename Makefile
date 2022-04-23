@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/23 09:47:01 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/23 14:23:20 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_FILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_strrchr.c ft_strncmp.c ft_memchr.c ft_strnstr.c \
 				ft_atoi.c ft_calloc.c ft_strdup.c ft_memcmp.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
-				ft_itoa.c ft_strmapi.c
+				ft_itoa.c ft_strmapi.c ft_striteri.c
 
 
 OUT_FILES	=	$(SRC_FILES:.c=.o)
