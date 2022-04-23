@@ -6,13 +6,49 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:08:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/23 17:16:19 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/23 18:51:01 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+
+static	int	int_size(int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (n == 0)
+		return (2);
+	else if (n < 0)
+		i++;
+	while (n)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, ft_itoa(n), ft_strlen(ft_itoa(n)));
+	char			str[12];
+	int				neg;
+	unsigned int	i;
+
+
+	neg = n < 0;
+	ft_bzero(str, 12);
+	i = int_size(n) - 1;
+	if (n == 0)
+		str[0] = '0';
+	while (n)
+	{
+		str[i] = ((-(neg) + !neg) * (n % 10)) + 48;
+		n = n / 10;
+		i--;
+	}
+	if (neg)
+		str[i] = '-';
+	write(fd, str, ft_strlen(str));
 }
