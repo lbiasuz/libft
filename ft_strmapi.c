@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 09:33:38 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/23 09:45:40 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/23 09:48:19 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		dest[i] = f(i,s[i]);
+		dest[i] = f(i, s[i]);
 		i++;
 	}
 	dest[i] = '\0';
