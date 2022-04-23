@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:08:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/23 18:51:01 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/23 19:41:00 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_putnbr_fd(int n, int fd)
 	char			str[12];
 	int				neg;
 	unsigned int	i;
-
 
 	neg = n < 0;
 	ft_bzero(str, 12);
