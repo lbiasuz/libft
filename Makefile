@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/25 01:29:19 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/25 01:35:17 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC_FILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 BONUS_FILES	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-				ft_lstlast_bonus.cft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 B_OUT_FILES	=	$(BONUS_FILES:.c=.o)
