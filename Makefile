@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/25 00:53:16 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/25 01:29:19 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,13 @@ SRC_FILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_atoi.c ft_calloc.c ft_strdup.c ft_memcmp.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 				ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
-				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-				ft_lstmap.c
+				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+
+BONUS_FILES	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+				ft_lstlast_bonus.cft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+
+B_OUT_FILES	=	$(BONUS_FILES:.c=.o)
 
 OUT_FILES	=	$(SRC_FILES:.c=.o)
 
@@ -35,7 +38,8 @@ OPTIONS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
-bonus: $(NAME)
+bonus: $(B_OUT_FILES)
+	ar rc: $(NAME) $(B_OUT_FILES)
 
 $(NAME): $(OUT_FILES)
 	ar rc $(NAME) $(OUT_FILES)
