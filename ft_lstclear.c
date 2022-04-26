@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:33:03 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/25 21:09:58 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/26 00:11:34 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **list, void (*del)(void *))
 		return ;
 	next = (*list)->next;
 	del((*list)->content);
-	del(*list);
+	free(*list);
 	*list = next;
 	ft_lstclear(list, del);
 }

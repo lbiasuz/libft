@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:16:41 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/25 21:09:56 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/26 00:12:04 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);
-	del(lst);
+	free(lst);
 }
