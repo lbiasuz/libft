@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:38:32 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/25 01:23:37 by lbiasuz          ###   ########.fr       */
+/*   Created: 2022/04/25 00:45:53 by lbiasuz           #+#    #+#             */
+/*   Updated: 2022/04/25 21:09:51 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst)
-		return ;
-	f(lst->content);
-	ft_lstiter(lst->next, f);
+	t_list	*dest;
+	t_list	*aux;
+
+	dest = NULL;
+	while (lst)
+	{
+		aux = ft_lstnew(f(lst->content));
+		if (!aux)
+		{
+			ft_lstclear(&aux, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&dest, aux);
+		lst = lst->next;
+	}
+	return (dest);
 }
