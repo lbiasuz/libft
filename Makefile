@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/25 21:08:02 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/25 23:44:24 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ OPTIONS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
-bonus: $(B_OUT_FILES)
-	ar rc $(NAME) $(B_OUT_FILES)
+bonus: $(NAME) $(B_OUT_FILES)
+	ar -rcs $(NAME) $(B_OUT_FILES)
 
 $(NAME): $(OUT_FILES)
 	ar rc $(NAME) $(OUT_FILES)
