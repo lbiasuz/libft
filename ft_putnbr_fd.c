@@ -6,12 +6,11 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:08:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/23 19:41:00 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/26 13:05:42 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static	int	int_size(int n)
 {
