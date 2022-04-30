@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/29 20:50:43 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/29 21:44:19 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,10 @@ $(NAME): $(OUT_FILES)
 	$(COMPILER) $(OPTIONS) -c $< 
 
 clean:
-	rm -f $(NAME)
+	rm -f $(OUT_FILES) $(B_OUT_FILES)
 
 fclean: clean
-	rm -f $(OUT_FILES) $(B_OUT_FILES)
+	rm -f $(NAME)
 
 re: fclean all
 
