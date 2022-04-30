@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:47:16 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/04/29 20:31:09 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/04/30 03:07:22 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	check = nmemb > size;
-	if ((nmemb * size) < (nmemb * check + size * !check))
+	if ((nmemb * size) < ((nmemb * check) + (size * !check)))
 		return (NULL);
 	dest = malloc(nmemb * size);
 	if (!dest)
