@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/29 21:44:19 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/04/30 03:00:34 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,4 +55,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:all clean fclean re
+.PHONY:all clean fclean re bonus
