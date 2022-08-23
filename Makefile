@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/04/30 03:00:34 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/08/22 22:39:59 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,26 +20,22 @@ SRC_FILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_atoi.c ft_calloc.c ft_strdup.c ft_memcmp.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 				ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-BONUS_FILES	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-				ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
-B_OUT_FILES	=	$(BONUS_FILES:.c=.o)
+				ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+				ft_get_next_line.c \
+				ft_get_next_line_utils.c
 
 OUT_FILES	=	$(SRC_FILES:.c=.o)
 
-HEAD_FILE	=	libft.h
+HEAD_FILE	=	libft.h ft_get_next_line.h
 
 COMPILER	=	gcc
 
 OPTIONS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
-
-bonus: $(NAME) $(B_OUT_FILES)
-	ar -rcs $(NAME) $(B_OUT_FILES)
 
 $(NAME): $(OUT_FILES)
 	ar rc $(NAME) $(OUT_FILES)
@@ -48,8 +44,8 @@ $(NAME): $(OUT_FILES)
 	$(COMPILER) $(OPTIONS) -c $< 
 
 clean:
-	rm -f $(OUT_FILES) $(B_OUT_FILES)
-
+	rm -f $(OUT_FILES)
+	
 fclean: clean
 	rm -f $(NAME)
 
