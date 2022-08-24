@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 20:44:02 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/08/22 22:40:03 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/08/23 22:54:02 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strchr(char *src, char c)
+int	ft_strchr_gnl(char *src, char c)
 {
 	int	i;
 
@@ -26,38 +26,7 @@ int	ft_strchr(char *src, char c)
 	return (-1);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{
-	unsigned int	src_len;
-	unsigned int	i;
-
-	i = 0;
-	src_len = ft_strlen(src);
-	if (!size)
-		return (src_len);
-	while (i < size - 1 && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (src_len);
-}
-
-char	*ft_strjoin(char **s1, char **s2)
+char	*ft_strjoin_gnl(char **s1, char **s2)
 {
 	char			*join;
 	unsigned int	s1_len;
@@ -73,7 +42,7 @@ char	*ft_strjoin(char **s1, char **s2)
 	return (join);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 	unsigned int	start_len;

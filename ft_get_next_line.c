@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:42:59 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/08/22 22:40:07 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/08/23 22:54:03 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	read_file(int fd, char **str_hold)
 		str_hold[0] = read_str;
 	else
 	{
-		temp = ft_strjoin(str_hold, &read_str);
+		temp = ft_strjoin_gnl(str_hold, &read_str);
 		free(str_hold[0]);
 		free(read_str);
 		str_hold[0] = temp;
@@ -41,19 +41,19 @@ char	*gen_line(char **str_hold)
 	char	*output;
 	char	*after_nl;
 
-	pos_nl = ft_strchr(*str_hold, '\n');
+	pos_nl = ft_strchr_gnl(*str_hold, '\n');
 	if (pos_nl >= 0)
 	{
-		after_nl = ft_substr(
+		after_nl = ft_substr_gnl(
 				str_hold[0], pos_nl + 1, ft_strlen(str_hold[0] + pos_nl + 1)
 				);
-		output = ft_substr(str_hold[0], 0, pos_nl + 1);
+		output = ft_substr_gnl(str_hold[0], 0, pos_nl + 1);
 		free(*str_hold);
 		str_hold[0] = after_nl;
 		return (output);
 	}
 	if (str_hold[0][0])
-		output = ft_substr(str_hold[0], 0, ft_strlen(str_hold[0]));
+		output = ft_substr_gnl(str_hold[0], 0, ft_strlen(str_hold[0]));
 	else
 		output = NULL;
 	free(str_hold[0]);
@@ -72,7 +72,7 @@ char	*get_next_line(int fd)
 	while (read_len)
 	{
 		read_len = read_file(fd, &str_hold[fd]);
-		if (read_len < BUFFER_SIZE || ft_strchr(str_hold[fd], '\n') >= 0)
+		if (read_len < BUFFER_SIZE || ft_strchr_gnl(str_hold[fd], '\n') >= 0)
 			read_len = 0;
 	}
 	return (gen_line(&str_hold[fd]));
