@@ -6,7 +6,7 @@
 #    By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 21:23:55 by lbiasuz           #+#    #+#              #
-#    Updated: 2022/08/23 21:54:40 by lbiasuz          ###   ########.fr        #
+#    Updated: 2022/08/23 22:56:41 by lbiasuz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC_FILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 
 OUT_FILES	=	$(SRC_FILES:.c=.o)
 
-HEAD_FILE	=	libft.h ft_get_next_line.h
+HEAD_FILE	=	libft.h get_next_line.h ft_printf.h
 
 COMPILER	=	gcc
 
