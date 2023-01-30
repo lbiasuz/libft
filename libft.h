@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 23:21:34 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/30 11:37:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/30 12:37:36 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 //	Number convertion
+int		ft_abs(int n);
+long	ft_absl(long n);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);
 // String manipulation
