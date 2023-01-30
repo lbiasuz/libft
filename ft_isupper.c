@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 23:11:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/30 11:38:14 by lbiasuz          ###   ########.fr       */
+/*   Created: 2023/01/30 11:37:39 by lbiasuz           #+#    #+#             */
+/*   Updated: 2023/01/30 11:38:38 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalpha(int c)
+int	ft_isupper(int c)
 {
-	return (ft_islower(c) || ft_isupper(c));
+	if (c < 65 || c > 90)
+		return (0);
+	return (1);
 }
