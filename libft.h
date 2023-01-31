@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 23:21:34 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/31 09:45:54 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:59:59 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,17 @@ char	*ft_itoa(int n);
 *@param nptr char*
 */
 int		ft_atoi(const char *nptr);
+/*Integer to variable base string conversion.
+*@param nb Integer number.
+*@param base Set of characters to use as numeric base.
+*@return char* Char vector
+*/
+char	*ft_itob(unsigned int nb, char *base);
+/*Unsigned integer to string conversion.
+*@param nb Integer number.
+*@return char* Char vector
+*/
+char	*ft_utoa(unsigned int nb);
 /*Get char * size
 *@param s char *
 */

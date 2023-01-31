@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:18:27 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/06/22 23:38:25 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:54:42 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,48 +25,6 @@ static unsigned int	long_long_size(unsigned long long nb, int base_len)
 		nb = nb / base_len;
 	}
 	return (i);
-}
-
-char	*ft_itob(unsigned int nb, char *base)
-{
-	char	*output;
-	int		base_len;
-	int		size;
-
-	base_len = ft_strlen(base);
-	size = long_long_size(nb, base_len);
-	output = (char *) malloc(sizeof(char) * (size));
-	if (!output)
-		return (NULL);
-	output[--size] = '\0';
-	if (!nb)
-		output[--size] = '0';
-	while (nb)
-	{
-		output[--size] = base[nb % base_len];
-		nb = nb / base_len;
-	}
-	return (output);
-}
-
-char	*ft_utoa(unsigned int nb)
-{
-	char	*output;
-	int		size;
-
-	size = long_long_size(nb, 10);
-	output = (char *) malloc(sizeof(char) * (size + 1));
-	if (!output)
-		return (NULL);
-	output[--size] = '\0';
-	if (!nb)
-		output[--size] = '0';
-	while (nb)
-	{
-		output[--size] = ((nb % 10) + 48);
-		nb = nb / 10;
-	}
-	return (output);
 }
 
 char	*ft_ultob(unsigned long long nb, char *base)
